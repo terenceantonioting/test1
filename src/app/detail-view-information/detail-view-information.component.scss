@@ -1,0 +1,63 @@
+.title-header {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+
+.loader{
+  text-align: center;
+  margin-top: 50px;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.spacer30 {
+  height: 30px;
+  display: block;
+}
+
+#recipeContent {
+  .card {
+    text-align: center;
+    margin: 30px 20px;
+    min-height: 220px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+    border-radius: 15px;
+    position: relative;
+    .card-body {
+      padding: 20px;
+      .card-title {
+        font-size: 16px;
+        .image-wrapper {
+          display: inline-block;
+          img {
+            height: auto;
+            width: 100%;
+            border-radius: 20px;
+          }
+        }
+        .recipe-information {
+          display: inline-block;
+          margin-left: 10px;
+        }
+        .card-instructions {
+          font-size: 16px;
+          margin: 0px 5px;
+        }
+      }
+    }
+  }
+}
+
+.line{
+  display: block;
+  height: 1px;
+  background-color: #a5a5a5;
+  width: 50px;
+  margin: 5px auto 5px;
+}

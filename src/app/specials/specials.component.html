@@ -1,0 +1,33 @@
+<div class="container" style="margin-top: 80px;">
+  <h2 class="title-header text-center">Specials</h2>
+  <div id="specials" class="row justify-content-md-center">
+
+    <div class="loader" *ngIf="!isLoaded">
+      <img src="https://w2c5f9x6.stackpathcdn.com/ftpRoot/SOLUTIONS/csi00015/images/loaderFinal.gif" alt="_loader">
+    </div>
+
+    <ng-container *ngIf="isLoaded">
+      <div class="col-xs-12 col-sm-12 col-md-3" *ngFor="let special of specials">
+        <div class="card" id="{{ special.uuid }}">
+          <div class="card-body">
+            <h5 class="card-title">
+              <span>{{ special.title }}</span>
+            </h5>
+            <span class="ribbon5">{{ special.type }}</span>
+            <p class="card-text" [innerHtml]="special.text"></p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <div class="error" *ngIf="hasError">
+      <div class="error-template">
+        <h1>Oops!</h1>
+        <h2>There was a problem</h2>
+        <div class="error-details">
+            Sorry, an error has occured!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

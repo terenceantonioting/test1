@@ -1,0 +1,108 @@
+<div class="container" style="margin-top: 80px;">
+  <h2 class="title-header text-center">Detailed Views</h2>
+  <div class="spacer30"></div>
+  <div class="loader" *ngIf="!isLoaded">
+      <img src="https://w2c5f9x6.stackpathcdn.com/ftpRoot/SOLUTIONS/csi00015/images/loaderFinal.gif" alt="_loader">
+    </div>
+  
+  <ng-container *ngIf="isLoaded">
+    <ul class="nav nav-tabs justify-content-center" id="recipeTitle" role="tablist">
+      <li class="nav-item" *ngFor="let recipeTitle of recipeTitles; let index = index">
+        <a class="nav-link" [class.active]="index == 0" id="{{ recipeTitle.recipeId }}" data-toggle="tab" href="#{{ recipeTitle.recipeId }}" role="tab" [attr.aria-controls]="recipeTitle.recipeId" [attr.aria-selected]="index == 0 ? true : false">{{ recipeTitle.recipeTitle }}</a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="recipeContent">
+      <div class="tab-pane fade" [class.show]="index == 0" [class.active]="index == 0" id="{{ recipe.uuid }}" role="tabpanel" [attr.aria-labelledby]="recipe.uuid + '-tab'" *ngFor="let recipe of recipes; let index = index">
+        <div class="row justify-content-md-center">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="image-wrapper">
+                        <img src="http://localhost:3001/{{recipe.images['full']}}" alt="_image">
+                      </div>
+                    </div>
+                    <div class="col-md-6 text-left">
+                      <div class="recipe-information">
+                        <h3>{{ recipe.title }}</h3>
+                        <p>{{ recipe.description }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="card">
+              <div class="header">
+                Preparation
+              </div>
+              <div class="line"></div>
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="card-instructions" style="text-align: left;">
+                    <span class="d-block">• Cooking Time: {{ recipe.cookTime }}</span>
+                    <span class="d-block">• Preparation Time: {{ recipe.prepTime }}</span>
+                    <span class="d-block">• Servings: {{ recipe.servings }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="card">
+              <div class="header">
+                Ingredients
+              </div>
+              <div class="line"></div>
+              <div class="card-body">
+                <div class="card-title">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="padding: 5px;" *ngFor="let ingredient of recipe.ingredients">
+                      <div class="card-instructions" style="text-align: left; font-size: 12px;">
+                        <span class="d-block"><strong>Name:</strong> {{ ingredient.name }}</span>
+                        <span class="d-block"><strong>Measurement:</strong> {{ ingredient.measurement ? ingredient.measurement : 'none' }}</span>
+                        <span class="d-block"><strong>Amount:</strong> {{ ingredient.amount }}</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="card">
+              <div class="header">
+                Directions
+              </div>
+              <div class="line"></div>
+              <div class="card-body">
+                <div class="card-title">
+                  <div class="card-instructions" style="text-align: left;">
+                    <span class="d-block" style="margin-bottom: 10px;" *ngFor="let direction of recipe.directions">• {{ direction.instructions }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="error" *ngIf="hasError">
+    <div class="error-template">
+      <h1>Oops!</h1>
+      <h2>There was a problem</h2>
+      <div class="error-details">
+          Sorry, an error has occured!
+      </div>
+    </div>
+  </div>
+
+</div>

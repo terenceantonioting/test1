@@ -1,0 +1,169 @@
+.title-header {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+
+.loader{
+  text-align: center;
+  margin-top: 50px;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.spacer30 {
+  height: 30px;
+  display: block;
+}
+
+.divider {
+  display: block;
+  height: 1px;
+  background-color: #FFFFFF;
+  width: 60%;
+  margin: 0 auto 5px;
+}
+
+#specials {
+  .card {
+    text-align: center;
+    margin: 30px 20px;
+    min-height: 220px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+    border-radius: 15px;
+    position: relative;
+    .card-img-top {
+      height: auto;
+      width: 100%;
+      min-height: 140px;
+      max-height: 140px;
+    }
+    .card-body {
+      padding: 10px 0px;
+      .card-title {
+        font-size: 16px;
+        max-height: 140px;
+        height: 60px;
+        min-height: 50px;
+        display: table;
+        margin: 0 auto;
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+      .ribbon5 {
+        display: block;
+        width: calc(100% + 41px);
+        height: 35px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        font-weight: bold;
+        text-align: center;
+        margin-left: -20px;
+        margin-right: -10px;
+        background: #EDBA19;
+        position: relative;
+        color: #ffffff;
+        top: 0px;
+        text-transform: uppercase;
+      }
+      .ribbon5:before, .ribbon5:after {
+        content: "";
+        position: absolute;
+      }
+      .ribbon5:before {
+        height: 0;
+        width: 0;
+        bottom: -10px;
+        left: 0;
+        border-top: 10px solid #cd8d11;
+        border-left: 10px solid transparent;
+      }
+      .ribbon5:after {
+        height: 0;
+        width: 0;
+        right: 0;
+        bottom: -10px;
+        border-top: 10px solid #cd8d11;
+        border-right: 10px solid transparent;
+      }
+      .badge {
+        color: #6f6d6d;
+        padding: 5px 12px;
+        font-size: 12px;
+      }
+      .card-text {
+        min-height: 50px;
+        margin-bottom: 0px;
+        font-size: 12px;
+        margin-top: 20px;
+      }
+      .line{
+        display: block;
+        height: 1px;
+        background-color: #a5a5a5;
+        width: 50px;
+        margin: 0 auto 5px;
+      }
+      .card-instructions {
+        font-size: 12px;
+        margin: 0px 5px;
+      }
+    }
+  }
+}
+
+#recipes {
+  .card {
+    text-align: center;
+    margin: 30px 20px;
+    min-height: 300px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+    border-radius: 15px;
+    .card-img-top {
+      height: auto;
+      width: 100%;
+      min-height: 140px;
+      max-height: 140px;
+    }
+    .card-body {
+      padding: 10px 0px;
+      .card-title {
+        font-size: 16px;
+      }
+      .card-text {
+        min-height: 50px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+      .line{
+        display: block;
+        height: 1px;
+        background-color: #a5a5a5;
+        width: 50px;
+        margin: 0 auto 5px;
+      }
+      .card-instructions {
+        font-size: 12px;
+        margin: 0px 5px;
+      }
+    }
+  }
+}
+
+
+.display-table {
+  display: table;
+  height: 150px;
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
